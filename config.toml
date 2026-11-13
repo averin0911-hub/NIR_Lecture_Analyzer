@@ -1,0 +1,16 @@
+# Общие параметры для M1 и M2. Пути считаются относительно этого файла.
+model = "gemini-3.5-flash-lite"
+input = "data/lectures"
+output = "results"
+max_words = 500
+max_output_tokens = 8192
+
+# Температуру не переопределяем: используются значения сервиса.
+# При необходимости можно явно добавить temperature = 1.0.
+
+# Не более одного запроса в 5 секунд (с запасом для квоты 15 RPM).
+# Лимиты TPM/RPD зависят от проекта; этот интервал их не гарантирует.
+request_interval_seconds = 5.0
+timeout_seconds = 120
+max_retries = 2
+retry_delay_seconds = 5.0
